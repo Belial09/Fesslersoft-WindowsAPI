@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{954703E9-3AA9-455D-ACBC-63BAAEE0C9B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fesslersoft.WindowsAPI</RootNamespace>
+    <AssemblyName>Fesslersoft.WindowsAPI</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Managed\ShellFunctions\ContextMenu.cs" />
+    <Compile Include="Managed\ShellFunctions\ExplorerIcons.cs" />
+    <Compile Include="Internal\Native\DataTypes\Enums.cs" />
+    <Compile Include="Internal\Native\DataTypes\Structs.cs" />
+    <Compile Include="Internal\Native\Interfaces\IContextMenu.cs" />
+    <Compile Include="Internal\Native\Interfaces\IContextMenu2.cs" />
+    <Compile Include="Internal\Native\Interfaces\IContextMenu3.cs" />
+    <Compile Include="Internal\Native\Interfaces\IShellFolder.cs" />
+    <Compile Include="Internal\Native\NetworkManagementFunctions\APIBufferFunctions\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetFile\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionDel\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionEnum\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareEnum\DllImports.cs" />
+    <Compile Include="Managed\DataTypes\Enums.cs" />
+    <Compile Include="Managed\DataTypes\FileInfo3.cs" />
+    <Compile Include="Managed\NetworkManagementFunctions\APIBufferFunctions.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetFileClose.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetFileEnum.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetSessionDel.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetSessionEnum.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetShareEnum.cs" />
+    <Compile Include="Managed\DataTypes\SessionInfo502.cs" />
+    <Compile Include="Managed\DataTypes\ShareInfo2.cs" />
+    <Compile Include="Internal\Native\ShellFunctions\ContextMenu\DllImports.cs" />
+    <Compile Include="Internal\Native\Helper\ShellContextMenuException.cs" />
+    <Compile Include="Internal\Native\ShellFunctions\SHGetFileInfo\DllImports.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

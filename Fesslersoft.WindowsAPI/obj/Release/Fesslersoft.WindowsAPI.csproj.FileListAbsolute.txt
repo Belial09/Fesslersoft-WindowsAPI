@@ -1,0 +1,2 @@
+D:\.NET Projekte\Fesslersoft.WinAPI\Fesslersoft.WinAPI\bin\Release\Fesslersoft.WindowsAPI.dll
+D:\.NET Projekte\Fesslersoft.WinAPI\Fesslersoft.WinAPI\obj\Release\Fesslersoft.WindowsAPI.dll
