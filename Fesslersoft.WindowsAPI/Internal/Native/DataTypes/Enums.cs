@@ -8,14 +8,8 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
 {
     internal class Enums
     {
-        
-
-        // Defines the values used with the IShellFolder::GetDisplayNameOf and IShellFolder::SetNameOf 
-        // methods to specify the type of file or folder names used by those methods
-
-        // Flags used with the CMINVOKECOMMANDINFOEX structure
         [Flags]
-        internal enum CMF : uint
+        internal enum Cmf : uint
         {
             NORMAL = 0x00000000,
             DEFAULTONLY = 0x00000001,
@@ -30,7 +24,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [Flags]
-        internal enum CMIC : uint
+        internal enum Cmic : uint
         {
             HOTKEY = 0x00000020,
             ICON = 0x00000010,
@@ -45,9 +39,8 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             PTINVOKE = 0x20000000
         }
 
-        // Flags specifying the information to return when calling IContextMenu::GetCommandString
         [Flags]
-        internal enum GCS : uint
+        internal enum Gcs : uint
         {
             VERBA = 0,
             HELPTEXTA = 1,
@@ -56,8 +49,6 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             HELPTEXTW = 5,
             VALIDATEW = 6
         }
-
-        // Specifies how the shortcut menu can be changed when calling IContextMenu::QueryContextMenu
 
         internal enum NetApiStatus : uint
         {
@@ -81,7 +72,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [Flags]
-        internal enum SFGAO : uint
+        internal enum Sfgao : uint
         {
             BROWSABLE = 0x8000000,
             CANCOPY = 1,
@@ -119,7 +110,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [Flags]
-        internal enum SHCONTF
+        internal enum Shcontf
         {
             FOLDERS = 0x0020,
             NONFOLDERS = 0x0040,
@@ -131,7 +122,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [Flags]
-        internal enum SHGNO
+        internal enum Shgno
         {
             NORMAL = 0x0000,
             INFOLDER = 0x0001,
@@ -141,7 +132,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [Flags]
-        internal enum SW
+        internal enum Sw
         {
             HIDE = 0,
             SHOWNORMAL = 1,
@@ -159,7 +150,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [Flags]
-        internal enum TPM : uint
+        internal enum Tpm : uint
         {
             LEFTBUTTON = 0x0000,
             RIGHTBUTTON = 0x0002,

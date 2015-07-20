@@ -13,37 +13,16 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.Interfaces
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IContextMenu2
     {
-        // Adds commands to a shortcut menu
         [PreserveSig]
-        Int32 QueryContextMenu(
-            IntPtr hmenu,
-            uint iMenu,
-            uint idCmdFirst,
-            uint idCmdLast,
-            Enums.CMF uFlags);
+        Int32 QueryContextMenu(IntPtr hmenu,uint iMenu,uint idCmdFirst,uint idCmdLast,Enums.Cmf uFlags);
 
-        // Carries out the command associated with a shortcut menu item
         [PreserveSig]
-        Int32 InvokeCommand(
-            ref Structs.CMINVOKECOMMANDINFOEX info);
+        Int32 InvokeCommand(ref Structs.Cminvokecommandinfoex info);
 
-        // Retrieves information about a shortcut menu command, 
-        // including the help string and the language-independent, 
-        // or canonical, name for the command
         [PreserveSig]
-        Int32 GetCommandString(
-            uint idcmd,
-            Enums.GCS uflags,
-            uint reserved,
-            [MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandstring,
-            int cch);
+        Int32 GetCommandString(uint idcmd,Enums.Gcs uflags,uint reserved,[MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandstring,int cch);
 
-        // Allows client objects of the IContextMenu interface to 
-        // handle messages associated with owner-drawn menu items
         [PreserveSig]
-        Int32 HandleMenuMsg(
-            uint uMsg,
-            IntPtr wParam,
-            IntPtr lParam);
+        Int32 HandleMenuMsg(uint uMsg,IntPtr wParam,IntPtr lParam);
     }
 }

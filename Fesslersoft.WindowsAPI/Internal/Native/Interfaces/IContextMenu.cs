@@ -13,29 +13,13 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.Interfaces
     [Guid("000214e4-0000-0000-c000-000000000046")]
     internal interface IContextMenu
     {
-        // Adds commands to a shortcut menu
         [PreserveSig]
-        Int32 QueryContextMenu(
-            IntPtr hmenu,
-            uint iMenu,
-            uint idCmdFirst,
-            uint idCmdLast,
-            Enums.CMF uFlags);
+        Int32 QueryContextMenu(IntPtr hmenu,uint iMenu,uint idCmdFirst,uint idCmdLast,Enums.Cmf uFlags);
 
-        // Carries out the command associated with a shortcut menu item
         [PreserveSig]
-        Int32 InvokeCommand(
-            ref Structs.CMINVOKECOMMANDINFOEX info);
+        Int32 InvokeCommand(ref Structs.Cminvokecommandinfoex info);
 
-        // Retrieves information about a shortcut menu command, 
-        // including the help string and the language-independent, 
-        // or canonical, name for the command
         [PreserveSig]
-        Int32 GetCommandString(
-            uint idcmd,
-            Enums.GCS uflags,
-            uint reserved,
-            [MarshalAs(UnmanagedType.LPArray)] byte[] commandstring,
-            int cch);
+        Int32 GetCommandString(uint idcmd,Enums.Gcs uflags,uint reserved,[MarshalAs(UnmanagedType.LPArray)] byte[] commandstring,int cch);
     }
 }

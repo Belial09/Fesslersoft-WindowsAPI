@@ -10,7 +10,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
     internal class Structs
     {
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-        internal struct SHFILEINFO
+        internal struct Shfileinfo
         {
             internal IntPtr hIcon;
             internal int iIcon;
@@ -23,17 +23,17 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
 
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-        internal struct CMINVOKECOMMANDINFOEX
+        internal struct Cminvokecommandinfoex
         {
             internal int cbSize;
-            internal Enums.CMIC fMask;
+            internal Enums.Cmic fMask;
             internal IntPtr hwnd;
             internal IntPtr lpVerb;
             [MarshalAs(UnmanagedType.LPStr)]
             internal string lpParameters;
             [MarshalAs(UnmanagedType.LPStr)]
             internal string lpDirectory;
-            internal Enums.SW nShow;
+            internal Enums.Sw nShow;
             internal int dwHotKey;
             internal IntPtr hIcon;
             [MarshalAs(UnmanagedType.LPStr)]
@@ -45,7 +45,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             internal string lpDirectoryW;
             [MarshalAs(UnmanagedType.LPWStr)]
             internal string lpTitleW;
-            internal POINT ptInvoke;
+            internal Point ptInvoke;
         }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
@@ -61,9 +61,9 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-        internal struct POINT
+        internal struct Point
         {
-            internal POINT(int x, int y)
+            internal Point(int x, int y)
             {
                 this.x = x;
                 this.y = y;
@@ -106,7 +106,5 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             [MarshalAs(UnmanagedType.LPWStr)]
             internal string Password;
         }
-
-        // Contains extended information about a shortcut menu command
     }
 }

@@ -11,7 +11,7 @@ namespace Fesslersoft.WindowsAPI.Managed.DataTypes
     {
         public string ComputerName { get; set; }
         public string UserName { get; set; }
-        public uint NumOpens { get; set; }
+        public uint NumberOfOpens { get; set; }
         public uint SecondsActive { get; set; }
         public uint SecondsIdle { get; set; }
         public uint UserFlags { get; set; }
@@ -24,7 +24,7 @@ namespace Fesslersoft.WindowsAPI.Managed.DataTypes
             {
                 ClientType = sessionInfo.ClientType,
                 ComputerName = sessionInfo.ComputerName,
-                NumOpens = sessionInfo.NumOpens,
+                NumberOfOpens = sessionInfo.NumOpens,
                 SecondsActive = sessionInfo.SecondsActive,
                 SecondsIdle = sessionInfo.SecondsIdle,
                 Transport = sessionInfo.Transport,

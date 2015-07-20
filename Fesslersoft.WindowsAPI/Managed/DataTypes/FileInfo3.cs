@@ -14,7 +14,7 @@ namespace Fesslersoft.WindowsAPI.Managed.DataTypes
         public Int32 Permission { get; set; }
         public Int32 NumberOfLocks { get; set; }
         public String Username { get; set; }
-        public String Pathname { get; set; }
+        public String Path { get; set; }
 
         internal static FileInfo3 MapToFileInfo3(Structs.FileInfo3 fileInfo)
         {
@@ -22,7 +22,7 @@ namespace Fesslersoft.WindowsAPI.Managed.DataTypes
             {
                 Id = fileInfo.SessionID,
                 NumberOfLocks = fileInfo.NumLocks,
-                Pathname = fileInfo.PathName,
+                Path = fileInfo.PathName,
                 Permission = fileInfo.Permission,
                 Username = fileInfo.UserName
             };

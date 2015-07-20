@@ -10,6 +10,13 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
 {
     public sealed class SystemIcons
     {
+        private const uint ShgfiIcon = 0x000000100;
+        private const uint ShgfiUsefileattributes = 0x000000010;
+        private const uint ShgfiOpenicon = 0x000000002;
+        private const uint ShgfiSmallicon = 0x000000001;
+        private const uint ShgfiLargeicon = 0x000000000;
+        private const uint FileAttributeDirectory = 0x00000010;
+
         public enum FolderType
         {
             Closed,
@@ -22,50 +29,30 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
             Small
         }
 
-        private const uint SHGFI_ICON = 0x000000100;
-        private const uint SHGFI_USEFILEATTRIBUTES = 0x000000010;
-        private const uint SHGFI_OPENICON = 0x000000002;
-        private const uint SHGFI_SMALLICON = 0x000000001;
-        private const uint SHGFI_LARGEICON = 0x000000000;
-        private const uint FILE_ATTRIBUTE_DIRECTORY = 0x00000010;
-
         public static Icon GetDefaultDirectoryIcon(IconSize size, FolderType folderType)
-        {
-            // Need to add size check, although errors generated at present!    
-            uint flags = SHGFI_ICON | SHGFI_USEFILEATTRIBUTES;
-
+        {    
+            uint flags = ShgfiIcon | ShgfiUsefileattributes;
             if (FolderType.Open == folderType)
             {
-                flags += SHGFI_OPENICON;
+                flags += ShgfiOpenicon;
             }
             if (IconSize.Small == size)
             {
-                flags += SHGFI_SMALLICON;
+                flags += ShgfiSmallicon;
             }
             else
             {
-                flags += SHGFI_LARGEICON;
+                flags += ShgfiLargeicon;
             }
-            // Get the folder icon    
-            var shfi = new Structs.SHFILEINFO();
-
-            var res = DllImports.SHGetFileInfo(@"C:\Windows",
-                FILE_ATTRIBUTE_DIRECTORY,
-                out shfi,
-                (uint)Marshal.SizeOf(shfi),
-                flags);
-
+            var shfi = new Structs.Shfileinfo();
+            var res = DllImports.SHGetFileInfo(@"C:\Windows",FileAttributeDirectory,out shfi,(uint)Marshal.SizeOf(shfi),flags);
             if (res == IntPtr.Zero)
+            {
                 throw Marshal.GetExceptionForHR(Marshal.GetHRForLastWin32Error());
-
-            // Load the icon from an HICON handle  
+            }
             Icon.FromHandle(shfi.hIcon);
-
-            // Now clone the icon, so that it can be successfully stored in an ImageList
             var icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
-
-            DllImports.DestroyIcon(shfi.hIcon);        // Cleanup    
-
+            DllImports.DestroyIcon(shfi.hIcon);        
             return icon;
         }
     }

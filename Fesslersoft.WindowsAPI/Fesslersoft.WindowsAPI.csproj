@@ -65,6 +65,7 @@
     <Compile Include="Internal\Native\ShellFunctions\ContextMenu\DllImports.cs" />
     <Compile Include="Internal\Native\Helper\ShellContextMenuException.cs" />
     <Compile Include="Internal\Native\ShellFunctions\SHGetFileInfo\DllImports.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
