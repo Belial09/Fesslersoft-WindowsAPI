@@ -10,6 +10,9 @@ using Fesslersoft.WindowsAPI.Internal.Native.ShellFunctions.SHGetFileInfo;
 
 namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
 {
+    /// <summary>
+    /// SystemIcons functions
+    /// </summary>
     public sealed class SystemIcons
     {
         public enum FolderType
@@ -31,6 +34,12 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
         private const uint ShgfiLargeicon = 0x000000000;
         private const uint FileAttributeDirectory = 0x00000010;
 
+        /// <summary>
+        /// The current Windows default Folder Icon in the given Size (Large/Small) as System.Drawing.Icon.
+        /// </summary>
+        /// <param name="size">The Size of the Icon (Small or Large).</param>
+        /// <param name="folderType">The folderTypeIcon (closed or Open).</param>
+        /// <returns>The Folder Icon as System.Drawing.Icon.</returns>
         public static Icon GetDefaultDirectoryIcon(IconSize size, FolderType folderType)
         {
             var flags = ShgfiIcon | ShgfiUsefileattributes;

@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fesslersoft.WindowsAPI", "Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.csproj", "{954703E9-3AA9-455D-ACBC-63BAAEE0C9B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fesslersoft.WindowsAPI.Tester", "Fesslersoft.WindowsAPI.Tester\Fesslersoft.WindowsAPI.Tester.csproj", "{47C72C29-DCC7-4CAB-A8E0-D654E3FB3005}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{954703E9-3AA9-455D-ACBC-63BAAEE0C9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{954703E9-3AA9-455D-ACBC-63BAAEE0C9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{954703E9-3AA9-455D-ACBC-63BAAEE0C9B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47C72C29-DCC7-4CAB-A8E0-D654E3FB3005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C72C29-DCC7-4CAB-A8E0-D654E3FB3005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C72C29-DCC7-4CAB-A8E0-D654E3FB3005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C72C29-DCC7-4CAB-A8E0-D654E3FB3005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

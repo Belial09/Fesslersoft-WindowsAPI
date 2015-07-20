@@ -12,9 +12,19 @@ using Fesslersoft.WindowsAPI.Managed.NetworkManagementFunctions;
 
 namespace Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions
 {
+    /// <summary>
+    /// NetSessionEnum function
+    /// </summary>
     public sealed class NetSessionEnum
     {
-        public static List<SessionInfo502> GetNetSessions(string server)
+        /// <summary>
+        /// Provides information about sessions established on a server.
+        /// </summary>
+        /// <param name="server">Pointer to a string that specifies the DNS or NetBIOS name of the remote server on which the function is to execute. If this parameter is NULL, the local computer is used.</param>
+        /// <param name="clientName">Pointer to a string that specifies the name of the computer session for which information is to be returned. If this parameter is NULL, NetSessionEnum returns information for all computer sessions on the server.</param>
+        /// <param name="userName">Pointer to a string that specifies the name of the user for which information is to be returned. If this parameter is NULL, NetSessionEnum returns information for all users.</param>
+        /// <returns>A Ienumerable of managed SessionInfo502 Objects.</returns>
+        public static IEnumerable<SessionInfo502> GetNetSessions(string server, string clientName, string userName)
         {
             var list = new List<SessionInfo502>();
             int entriesRead;
@@ -34,7 +44,7 @@ namespace Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions
                     list.Add(netSessionEnumResult);
                 }
             }
-            ApiBufferFunctions.NetApiBufferFree(pBuffer);
+            NetApiBufferFree.FreeBuffer(pBuffer);
             return list;
         }
     }

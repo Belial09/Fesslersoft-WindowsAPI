@@ -6,16 +6,19 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using Fesslersoft.WindowsAPI.Annotations;
 using Fesslersoft.WindowsAPI.Internal.Native.DataTypes;
 using Fesslersoft.WindowsAPI.Internal.Native.Helper;
 using Fesslersoft.WindowsAPI.Internal.Native.Interfaces;
 using Fesslersoft.WindowsAPI.Internal.Native.ShellFunctions.ContextMenu;
+using Fesslersoft.WindowsAPI.Properties;
 
 #endregion
 
 namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
 {
+    /// <summary>
+    /// ContextMenu Shell Wrapper
+    /// </summary>
     public sealed class ContextMenu
     {
         private const int SOk = 0;
@@ -28,7 +31,6 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
         private static IContextMenu _oContextMenu;
         private static IContextMenu2 _oContextMenu2;
         private static IContextMenu3 _oContextMenu3;
-
         private static readonly int CbInvokeCommand = Marshal.SizeOf(typeof (Structs.Cminvokecommandinfoex));
         private static Guid _iidIShellFolder = new Guid("{000214E6-0000-0000-C000-000000000046}");
         private static Guid _iidIContextMenu = new Guid("{000214e4-0000-0000-c000-000000000046}");
@@ -165,6 +167,12 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
             _oParentFolder = null;
         }
 
+        /// <summary>
+        /// Shows the Current Windows Context Menu for the given Directory at the PointOfScreen passed to the method.
+        /// </summary>
+        /// <param name="directory">The DirectoryInfo Objects of the directory.</param>
+        /// <param name="pointToScreen">The point of screen where the ContextMenu should be shown.</param>
+        /// <param name="hwnd">The Window Handle of the Form showing the Context.</param>
         public static void ShowContextMenu(DirectoryInfo directory, Point pointToScreen, IntPtr hwnd)
         {
             ShowContextMenuInternal(directory, pointToScreen, hwnd);

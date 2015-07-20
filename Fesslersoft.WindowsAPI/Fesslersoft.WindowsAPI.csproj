@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetConnectionEnum\DllImports.cs" />
+    <Compile Include="Managed\DataTypes\ConnectionInfo1.cs" />
+    <Compile Include="Managed\Helpers\Enum.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetConnectionEnum.cs" />
     <Compile Include="Managed\ShellFunctions\ContextMenu.cs" />
     <Compile Include="Managed\ShellFunctions\ExplorerIcons.cs" />
     <Compile Include="Internal\Native\DataTypes\Enums.cs" />
@@ -52,9 +56,8 @@
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionDel\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionEnum\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareEnum\DllImports.cs" />
-    <Compile Include="Managed\DataTypes\Enums.cs" />
     <Compile Include="Managed\DataTypes\FileInfo3.cs" />
-    <Compile Include="Managed\NetworkManagementFunctions\APIBufferFunctions.cs" />
+    <Compile Include="Managed\NetworkManagementFunctions\NetApiBufferFree.cs" />
     <Compile Include="Managed\NetworkShareManagementFunctions\NetFileClose.cs" />
     <Compile Include="Managed\NetworkShareManagementFunctions\NetFileEnum.cs" />
     <Compile Include="Managed\NetworkShareManagementFunctions\NetSessionDel.cs" />

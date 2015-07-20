@@ -2,3 +2,8 @@ D:\.NET Projekte\Fesslersoft.WinAPI\Fesslersoft.WinAPI\bin\Debug\Fesslersoft.Win
 D:\.NET Projekte\Fesslersoft.WinAPI\Fesslersoft.WinAPI\bin\Debug\Fesslersoft.WindowsAPI.pdb
 D:\.NET Projekte\Fesslersoft.WinAPI\Fesslersoft.WinAPI\obj\Debug\Fesslersoft.WindowsAPI.dll
 D:\.NET Projekte\Fesslersoft.WinAPI\Fesslersoft.WinAPI\obj\Debug\Fesslersoft.WindowsAPI.pdb
+D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI\bin\Debug\Fesslersoft.WindowsAPI.dll
+D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI\bin\Debug\Fesslersoft.WindowsAPI.pdb
+D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI\obj\Debug\Fesslersoft.WindowsAPI.csprojResolveAssemblyReference.cache
+D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI\obj\Debug\Fesslersoft.WindowsAPI.dll
+D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI\obj\Debug\Fesslersoft.WindowsAPI.pdb

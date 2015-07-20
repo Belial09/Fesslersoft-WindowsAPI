@@ -9,6 +9,20 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
 {
     internal class Structs
     {
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet=CharSet.Auto)] 
+        internal struct ConnectionInfo1 
+        { 
+                public uint coni1_id; 
+                public uint coni1_type; 
+                public uint coni1_num_opens; 
+                public uint coni1_num_users; 
+                public uint coni1_time;
+                [MarshalAs(UnmanagedType.LPWStr)]
+                public string coni1_username;
+                [MarshalAs(UnmanagedType.LPWStr)]
+                public string coni1_netname; 
+        } 
+
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         internal struct Cminvokecommandinfoex
         {
