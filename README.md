@@ -22,4 +22,4 @@ Some Portions of the Library are taken from:
 
  * [C# File Browser by Steven Roebert](http://www.codeproject.com/Articles/15059/C-File-Browser)
  * [Obtaining (and managing) file and folder icons using SHGetFileInfo in C# - Paul Ingles](http://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using)
- * [PINVOKE](http://www.pinvoke.net/)
+ * [PINVOKE.NET](http://www.pinvoke.net/)
