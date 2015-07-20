@@ -16,3 +16,8 @@ This Library will be soon avaiable using NuGet.
 ##Content
 
 coming soon...
+
+##Credits
+Some Portions of the Library are taken from:
+
+*[C# File Browser by Steven Roebert](http://www.codeproject.com/Articles/15059/C-File-Browser)
