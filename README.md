@@ -1,2 +1,18 @@
-# Fesslersoft-WindowsAPI
-Codesnippets.Fesslersoft.de Windows API Wrapper
+#FesslerSoft.WindowsAPI
+
+##About the Library
+
+FesslerSoft.WindowsAPI is a collection of managed .NET Code wrapped around the WindowsAPI. 
+Parts of the code are taken from **http://codesnippets.fesslersoft.de**. 
+The Library will work with .NET Framework 2.0 and newer.
+
+##About Fesslersoft
+
+We provides source code snippets for multiple languages, e.g. C#, VB.NET, XML, Java, Python, C++, HTML, PHP, Javascript, jQuery, AngularJs, Batch etc...
+
+##NuGet
+This Library will be soon avaiable using NuGet.
+
+##Content
+
+coming soon...
