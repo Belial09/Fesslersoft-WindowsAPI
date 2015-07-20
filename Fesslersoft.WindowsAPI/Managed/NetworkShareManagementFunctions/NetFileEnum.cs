@@ -12,8 +12,7 @@ using Fesslersoft.WindowsAPI.Managed.NetworkManagementFunctions;
 
 namespace Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions
 {
-    
-    sealed class NetFileEnum
+    internal sealed class NetFileEnum
     {
         public static IEnumerable<FileInfo3> GetNetFileList(string server)
         {

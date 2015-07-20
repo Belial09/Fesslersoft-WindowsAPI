@@ -39,7 +39,7 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
         {
             var arrPidLs = new IntPtr[1];
             arrPidLs[0] = PIDLs;
-            var nResult = oParentFolder.GetUIObjectOf(IntPtr.Zero,(uint) arrPidLs.Length,arrPidLs,ref _iidIContextMenu,IntPtr.Zero,out ctxMenuPtr);
+            var nResult = oParentFolder.GetUIObjectOf(IntPtr.Zero, (uint) arrPidLs.Length, arrPidLs, ref _iidIContextMenu, IntPtr.Zero, out ctxMenuPtr);
             if (SOk == nResult)
             {
                 _oContextMenu = (IContextMenu) Marshal.GetTypedObjectForIUnknown(ctxMenuPtr, typeof (IContextMenu));
@@ -64,24 +64,6 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
                 _oDesktopFolder = (IShellFolder) Marshal.GetTypedObjectForIUnknown(pUnkownDesktopFolder, typeof (IShellFolder));
             }
             return _oDesktopFolder;
-        }
-
-        private static IntPtr GetPidl([NotNull] DirectoryInfo directoryInfo)
-        {
-            if (directoryInfo.Parent != null)
-            {
-                var oParentFolder = GetParentFolder(directoryInfo.Parent.FullName);
-                if (null == oParentFolder)
-                {
-                    return IntPtr.Zero;
-                }
-                uint pchEaten = 0;
-                Enums.Sfgao pdwAttributes = 0;
-                IntPtr pPidl;
-                oParentFolder.ParseDisplayName(IntPtr.Zero, IntPtr.Zero, directoryInfo.Name, ref pchEaten, out pPidl, ref pdwAttributes);
-                return pPidl;
-            }
-            return IntPtr.Zero;
         }
 
         private static IShellFolder GetParentFolder(string folderName)
@@ -122,17 +104,35 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
             return _oParentFolder;
         }
 
+        private static IntPtr GetPidl([NotNull] DirectoryInfo directoryInfo)
+        {
+            if (directoryInfo.Parent != null)
+            {
+                var oParentFolder = GetParentFolder(directoryInfo.Parent.FullName);
+                if (null == oParentFolder)
+                {
+                    return IntPtr.Zero;
+                }
+                uint pchEaten = 0;
+                Enums.Sfgao pdwAttributes = 0;
+                IntPtr pPidl;
+                oParentFolder.ParseDisplayName(IntPtr.Zero, IntPtr.Zero, directoryInfo.Name, ref pchEaten, out pPidl, ref pdwAttributes);
+                return pPidl;
+            }
+            return IntPtr.Zero;
+        }
+
         private static void InvokeCommand(IContextMenu oContextMenu, uint nCmd, string strFolder, Point pointInvoke)
         {
             var invoke = new Structs.Cminvokecommandinfoex
             {
-                cbSize = CbInvokeCommand, 
-                lpVerb = (IntPtr) (nCmd - CmdFirst), 
-                lpDirectory = strFolder, 
-                lpVerbW = (IntPtr) (nCmd - CmdFirst), 
-                lpDirectoryW = strFolder, 
-                fMask = Enums.Cmic.UNICODE | Enums.Cmic.PTINVOKE | ((Control.ModifierKeys & Keys.Control) != 0 ? Enums.Cmic.CONTROL_DOWN : 0) | ((Control.ModifierKeys & Keys.Shift) != 0 ? Enums.Cmic.SHIFT_DOWN : 0), 
-                ptInvoke = new Structs.Point(pointInvoke.X, pointInvoke.Y), 
+                cbSize = CbInvokeCommand,
+                lpVerb = (IntPtr) (nCmd - CmdFirst),
+                lpDirectory = strFolder,
+                lpVerbW = (IntPtr) (nCmd - CmdFirst),
+                lpDirectoryW = strFolder,
+                fMask = Enums.Cmic.UNICODE | Enums.Cmic.PTINVOKE | ((Control.ModifierKeys & Keys.Control) != 0 ? Enums.Cmic.CONTROL_DOWN : 0) | ((Control.ModifierKeys & Keys.Shift) != 0 ? Enums.Cmic.SHIFT_DOWN : 0),
+                ptInvoke = new Structs.Point(pointInvoke.X, pointInvoke.Y),
                 nShow = Enums.Sw.SHOWNORMAL
             };
             oContextMenu.InvokeCommand(ref invoke);
@@ -172,10 +172,10 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
 
         private static void ShowContextMenuInternal(DirectoryInfo directory, Point pointScreen, IntPtr hwnd)
         {
-            IntPtr pMenu = IntPtr.Zero;
-            IntPtr iContextMenuPtr = IntPtr.Zero;
-            IntPtr iContextMenuPtr2 = IntPtr.Zero;
-            IntPtr iContextMenuPtr3 = IntPtr.Zero;
+            var pMenu = IntPtr.Zero;
+            var iContextMenuPtr = IntPtr.Zero;
+            var iContextMenuPtr2 = IntPtr.Zero;
+            var iContextMenuPtr3 = IntPtr.Zero;
 
             try
             {
@@ -186,12 +186,12 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
                     return;
                 }
                 pMenu = DllImports.CreatePopupMenu();
-                _oContextMenu.QueryContextMenu(pMenu,0,CmdFirst,CmdLast,Enums.Cmf.EXPLORE |Enums.Cmf.NORMAL |((Control.ModifierKeys & Keys.Shift) != 0 ? Enums.Cmf.EXTENDEDVERBS : 0));
-Marshal.QueryInterface(iContextMenuPtr, ref _iidIContextMenu2, out iContextMenuPtr2);
+                _oContextMenu.QueryContextMenu(pMenu, 0, CmdFirst, CmdLast, Enums.Cmf.EXPLORE | Enums.Cmf.NORMAL | ((Control.ModifierKeys & Keys.Shift) != 0 ? Enums.Cmf.EXTENDEDVERBS : 0));
+                Marshal.QueryInterface(iContextMenuPtr, ref _iidIContextMenu2, out iContextMenuPtr2);
                 Marshal.QueryInterface(iContextMenuPtr, ref _iidIContextMenu3, out iContextMenuPtr3);
                 _oContextMenu2 = (IContextMenu2) Marshal.GetTypedObjectForIUnknown(iContextMenuPtr2, typeof (IContextMenu2));
                 _oContextMenu3 = (IContextMenu3) Marshal.GetTypedObjectForIUnknown(iContextMenuPtr3, typeof (IContextMenu3));
-                var nSelected = DllImports.TrackPopupMenuEx(pMenu,Enums.Tpm.RETURNCMD,pointScreen.X,pointScreen.Y,hwnd,IntPtr.Zero);
+                var nSelected = DllImports.TrackPopupMenuEx(pMenu, Enums.Tpm.RETURNCMD, pointScreen.X, pointScreen.Y, hwnd, IntPtr.Zero);
                 DllImports.DestroyMenu(pMenu);
                 pMenu = IntPtr.Zero;
                 if (nSelected != 0)
@@ -199,7 +199,9 @@ Marshal.QueryInterface(iContextMenuPtr, ref _iidIContextMenu2, out iContextMenuP
                     InvokeCommand(_oContextMenu, nSelected, _strParentFolder, pointScreen);
                 }
             }
-            catch{}
+            catch
+            {
+            }
             finally
             {
                 if (pMenu != IntPtr.Zero)

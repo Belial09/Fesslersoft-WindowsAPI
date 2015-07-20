@@ -6,7 +6,6 @@ using Fesslersoft.WindowsAPI.Internal.Native.DataTypes;
 
 namespace Fesslersoft.WindowsAPI.Managed.DataTypes
 {
-    
     public class SessionInfo502
     {
         public string ComputerName { get; set; }

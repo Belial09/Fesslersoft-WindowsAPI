@@ -14,7 +14,7 @@ namespace Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions
 {
     public sealed class NetSessionEnum
     {
-        public static List<Fesslersoft.WindowsAPI.Managed.DataTypes.SessionInfo502> GetNetSessions(string server)
+        public static List<SessionInfo502> GetNetSessions(string server)
         {
             var list = new List<SessionInfo502>();
             int entriesRead;

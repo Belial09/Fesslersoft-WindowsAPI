@@ -7,7 +7,6 @@ using Fesslersoft.WindowsAPI.Internal.Native.DataTypes;
 
 namespace Fesslersoft.WindowsAPI.Managed.DataTypes
 {
-    
     public sealed class FileInfo3
     {
         public Int32 Id { get; set; }

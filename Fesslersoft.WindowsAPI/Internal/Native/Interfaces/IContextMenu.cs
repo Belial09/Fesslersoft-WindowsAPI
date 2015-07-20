@@ -14,12 +14,12 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.Interfaces
     internal interface IContextMenu
     {
         [PreserveSig]
-        Int32 QueryContextMenu(IntPtr hmenu,uint iMenu,uint idCmdFirst,uint idCmdLast,Enums.Cmf uFlags);
+        Int32 QueryContextMenu(IntPtr hmenu, uint iMenu, uint idCmdFirst, uint idCmdLast, Enums.Cmf uFlags);
 
         [PreserveSig]
         Int32 InvokeCommand(ref Structs.Cminvokecommandinfoex info);
 
         [PreserveSig]
-        Int32 GetCommandString(uint idcmd,Enums.Gcs uflags,uint reserved,[MarshalAs(UnmanagedType.LPArray)] byte[] commandstring,int cch);
+        Int32 GetCommandString(uint idcmd, Enums.Gcs uflags, uint reserved, [MarshalAs(UnmanagedType.LPArray)] byte[] commandstring, int cch);
     }
 }

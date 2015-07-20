@@ -10,9 +10,9 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.NetworkShareManagementFunctions
     internal static class DllImports
     {
         [DllImport("netapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        internal static extern int NetFileClose(string servername,int id);
+        internal static extern int NetFileClose(string servername, int id);
 
         [DllImport("netapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        internal static extern int NetFileEnum(string serverName,string basePath,string userName,int level,ref IntPtr buffer,int prefMaxLength,out int entriesRead,out int totalEntries,ref int resumeHandle);
+        internal static extern int NetFileEnum(string serverName, string basePath, string userName, int level, ref IntPtr buffer, int prefMaxLength, out int entriesRead, out int totalEntries, ref int resumeHandle);
     }
 }
