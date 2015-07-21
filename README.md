@@ -6,6 +6,8 @@ FesslerSoft.WindowsAPI is a collection of managed .NET Code wrapped around the W
 Parts of the code are taken from **http://codesnippets.fesslersoft.de**. 
 The Library will work with .NET Framework 2.0 and newer.
 
+  * [Sandcastle Helpfile 21.07.2015 matching Commit 13](http://codesnippets.fesslersoft.de/github/help/Fesslersoft.WindowsAPI)
+
 ##About Fesslersoft
 
 We provides source code snippets for multiple languages, e.g. C#, VB.NET, XML, Java, Python, C++, HTML, PHP, Javascript, jQuery, AngularJs, Batch etc...
