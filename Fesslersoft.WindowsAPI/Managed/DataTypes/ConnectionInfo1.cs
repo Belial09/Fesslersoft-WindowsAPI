@@ -9,7 +9,8 @@ namespace Fesslersoft.WindowsAPI.Managed.DataTypes
 {
     /// <summary>
     ///     CONNECTION_INFO_1 structure: Contains the identification number of a connection, number of open files, connection
-    ///     time, number of users on the connection, and the type of connection. All Descriptions are Taken from https://msdn.microsoft.com/en-us/library/windows/desktop/bb525373(v=vs.85).aspx (CONNECTION_INFO_1 structure).
+    ///     time, number of users on the connection, and the type of connection. All Descriptions are Taken from
+    ///     https://msdn.microsoft.com/en-us/library/windows/desktop/bb525373(v=vs.85).aspx (CONNECTION_INFO_1 structure).
     /// </summary>
     public class ConnectionInfo1
     {

@@ -40,9 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetConnectionEnum\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetFileGetInfo\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionGetInfo\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareAdd\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareCheck\DllImports.cs" />
     <Compile Include="Managed\DataTypes\ConnectionInfo1.cs" />
+    <Compile Include="Managed\DataTypes\SessionInfo2.cs" />
+    <Compile Include="Managed\DataTypes\ShareInfo502.cs" />
     <Compile Include="Managed\Helpers\Enum.cs" />
     <Compile Include="Managed\NetworkShareManagementFunctions\NetConnectionEnum.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetFileGetInfo.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetSessionGetInfo.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetShareAdd.cs" />
+    <Compile Include="Managed\NetworkShareManagementFunctions\NetShareCheck.cs" />
     <Compile Include="Managed\ShellFunctions\ContextMenu.cs" />
     <Compile Include="Managed\ShellFunctions\ExplorerIcons.cs" />
     <Compile Include="Internal\Native\DataTypes\Enums.cs" />

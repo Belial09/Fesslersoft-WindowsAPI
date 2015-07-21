@@ -17,7 +17,7 @@ using Fesslersoft.WindowsAPI.Properties;
 namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
 {
     /// <summary>
-    /// ContextMenu Shell Wrapper
+    ///     ContextMenu Shell Wrapper
     /// </summary>
     public sealed class ContextMenu
     {
@@ -168,7 +168,7 @@ namespace Fesslersoft.WindowsAPI.Managed.ShellFunctions
         }
 
         /// <summary>
-        /// Shows the Current Windows Context Menu for the given Directory at the PointOfScreen passed to the method.
+        ///     Shows the Current Windows Context Menu for the given Directory at the PointOfScreen passed to the method.
         /// </summary>
         /// <param name="directory">The DirectoryInfo Objects of the directory.</param>
         /// <param name="pointToScreen">The point of screen where the ContextMenu should be shown.</param>

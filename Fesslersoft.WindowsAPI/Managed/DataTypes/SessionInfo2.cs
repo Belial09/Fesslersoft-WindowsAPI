@@ -9,10 +9,10 @@ namespace Fesslersoft.WindowsAPI.Managed.DataTypes
 {
     /// <summary>
     ///     Contains information about the session, including name of the computer; name of the user; open files, pipes, and
-    ///     devices on the computer; and the name of the transport the client is using. Descriptions taken from
-    ///     https://msdn.microsoft.com/en-us/library/windows/desktop/bb525401(v=vs.85).aspx (SESSION_INFO_502 structure).
+    ///     devices on the computer; and the type of client that established the session. Descriptions taken from
+    ///     https://msdn.microsoft.com/en-us/library/windows/desktop/bb525400(v=vs.85).aspx (SESSION_INFO_2 structure).
     /// </summary>
-    public class SessionInfo502
+    public class SessionInfo2
     {
         /// <summary>
         ///     Pointer to a Unicode string specifying the name of the computer that established the session. This string cannot
@@ -74,30 +74,21 @@ namespace Fesslersoft.WindowsAPI.Managed.DataTypes
         public string ClientType { get; set; }
 
         /// <summary>
-        ///     Specifies the name of the transport that the client is using to communicate with the server.
+        ///     Maps the native SessionInfo2 Structure to a managed SessionInfo2 Class.
         /// </summary>
-        /// <value>
-        ///     The transport.
-        /// </value>
-        public string Transport { get; set; }
-
-        /// <summary>
-        ///     Maps the native SessionInfo502 Structure to a managed SessionInfo502 Class.
-        /// </summary>
-        /// <param name="sessionInfo">The native source SessionInfo502.</param>
-        /// <returns>A managed SessionInfo502 Object.</returns>
-        internal static SessionInfo502 MapToSessionInfo502(Structs.SessionInfo502 sessionInfo)
+        /// <param name="sessionInfo">The native source SessionInfo2.</param>
+        /// <returns>A managed SessionInfo2 Object.</returns>
+        internal static SessionInfo2 MapToSessionInfo2(Structs.SessionInfo2 sessionInfo)
         {
-            return new SessionInfo502
+            return new SessionInfo2
             {
-                ClientType = sessionInfo.ClientType,
-                ComputerName = sessionInfo.ComputerName,
-                NumberOfOpens = sessionInfo.NumOpens,
-                SecondsActive = sessionInfo.SecondsActive,
-                SecondsIdle = sessionInfo.SecondsIdle,
-                Transport = sessionInfo.Transport,
-                UserFlags = (Enum.SessionUserFlags) sessionInfo.UserFlags,
-                UserName = sessionInfo.UserName
+                ClientType = sessionInfo.sesi2_cltype_name,
+                ComputerName = sessionInfo.sesi2_cname,
+                NumberOfOpens = sessionInfo.sesi2_num_opens,
+                SecondsActive = sessionInfo.sesi2_time,
+                SecondsIdle = sessionInfo.sesi2_idle_time,
+                UserFlags = (Enum.SessionUserFlags) sessionInfo.sesi2_user_flags,
+                UserName = sessionInfo.sesi2_username
             };
         }
     }

@@ -9,21 +9,7 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
 {
     internal class Structs
     {
-        [StructLayoutAttribute(LayoutKind.Sequential, CharSet=CharSet.Auto)] 
-        internal struct ConnectionInfo1 
-        { 
-                public uint coni1_id; 
-                public uint coni1_type; 
-                public uint coni1_num_opens; 
-                public uint coni1_num_users; 
-                public uint coni1_time;
-                [MarshalAs(UnmanagedType.LPWStr)]
-                public string coni1_username;
-                [MarshalAs(UnmanagedType.LPWStr)]
-                public string coni1_netname; 
-        } 
-
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
         internal struct Cminvokecommandinfoex
         {
             internal int cbSize;
@@ -41,6 +27,18 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             [MarshalAs(UnmanagedType.LPWStr)] internal string lpDirectoryW;
             [MarshalAs(UnmanagedType.LPWStr)] internal string lpTitleW;
             internal Point ptInvoke;
+        }
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        internal struct ConnectionInfo1
+        {
+            internal uint coni1_id;
+            internal uint coni1_type;
+            internal uint coni1_num_opens;
+            internal uint coni1_num_users;
+            internal uint coni1_time;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string coni1_username;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string coni1_netname;
         }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
@@ -64,6 +62,18 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
 
             internal int x;
             internal int y;
+        }
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        internal struct SessionInfo2
+        {
+            [MarshalAs(UnmanagedType.LPWStr)] internal string sesi2_cname;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string sesi2_username;
+            internal uint sesi2_num_opens;
+            internal uint sesi2_time;
+            internal uint sesi2_idle_time;
+            internal uint sesi2_user_flags;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string sesi2_cltype_name;
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -90,6 +100,21 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             internal int CurrentUsers;
             [MarshalAs(UnmanagedType.LPWStr)] internal string Path;
             [MarshalAs(UnmanagedType.LPWStr)] internal string Password;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct ShareInfo502
+        {
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi502_netname;
+            internal int shi502_type;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi502_remark;
+            internal Int32 shi502_permissions;
+            internal Int32 shi502_max_uses;
+            internal Int32 shi502_current_uses;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi502_path;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi502_passwd;
+            internal Int32 shi502_reserved;
+            internal IntPtr shi502_security_descriptor;
         }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]

@@ -9,18 +9,25 @@ using Enum = Fesslersoft.WindowsAPI.Managed.Helpers.Enum;
 namespace Fesslersoft.WindowsAPI.Managed.NetworkManagementFunctions
 {
     /// <summary>
-    /// NetApiBufferFree function
+    ///     NetApiBufferFree function
     /// </summary>
     internal sealed class NetApiBufferFree
     {
         /// <summary>
-        /// The FreeBuffer function frees the memory that the NetApiBufferAllocate function allocates. Applications should also call FreeBuffer to free the memory that other network management functions use internally to return information.
+        ///     The FreeBuffer function frees the memory that the NetApiBufferAllocate function allocates. Applications should also
+        ///     call FreeBuffer to free the memory that other network management functions use internally to return information.
         /// </summary>
-        /// <param name="buffer">A pointer to a buffer returned previously by another network management function or memory allocated by calling the NetApiBufferAllocate function.</param>
-        /// <returns>If the function succeeds, the return value is NERR_Success. If the function fails, the return value is a system error code. For a list of error codes, see System Error Codes.</returns>
+        /// <param name="buffer">
+        ///     A pointer to a buffer returned previously by another network management function or memory
+        ///     allocated by calling the NetApiBufferAllocate function.
+        /// </param>
+        /// <returns>
+        ///     If the function succeeds, the return value is NERR_Success. If the function fails, the return value is a
+        ///     system error code. For a list of error codes, see System Error Codes.
+        /// </returns>
         internal static Enum.NetApiResult FreeBuffer(IntPtr buffer)
         {
-            return (Enum.NetApiResult)DllImports.NetApiBufferFree(buffer);
+            return (Enum.NetApiResult) DllImports.NetApiBufferFree(buffer);
         }
     }
 }

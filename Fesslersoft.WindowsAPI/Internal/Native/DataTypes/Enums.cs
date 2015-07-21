@@ -72,6 +72,14 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
         }
 
         [Flags]
+        internal enum NetError : uint
+        {
+            NERR_Success = 0,
+            ERROR_NOT_ENOUGH_MEMORY = 8,
+            NERR_DeviceNotShared = 2311,
+        }
+
+        [Flags]
         internal enum Sfgao : uint
         {
             BROWSABLE = 0x8000000,
