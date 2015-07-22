@@ -64,6 +64,19 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             internal int y;
         }
 
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto, Pack = 1)]
+        internal struct SHFILEOPSTRUCT
+        {
+            internal readonly IntPtr hwnd;
+            [MarshalAs(UnmanagedType.U4)] internal Enums.FileOperationType wFunc;
+            internal string pFrom;
+            internal readonly string pTo;
+            internal Enums.FileOperationFlags fFlags;
+            [MarshalAs(UnmanagedType.Bool)] internal readonly bool fAnyOperationsAborted;
+            internal readonly IntPtr hNameMappings;
+            internal readonly string lpszProgressTitle;
+        }
+
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
         internal struct SessionInfo2
         {
@@ -117,6 +130,22 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             internal IntPtr shi502_security_descriptor;
         }
 
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct ShareInfo503
+        {
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi503_netname;
+            internal int shi503_type;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi503_remark;
+            internal Int32 shi503_permissions;
+            internal Int32 shi503_max_uses;
+            internal Int32 shi503_current_uses;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi503_path;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi503_passwd;
+            [MarshalAs(UnmanagedType.LPWStr)] internal string shi503_servername;
+            internal Int32 shi503_reserved;
+            internal IntPtr shi503_security_descriptor;
+        }
+
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
         internal struct Shfileinfo
         {
@@ -126,5 +155,50 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.DataTypes
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)] internal string szDisplayName;
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 80)] internal string szTypeName;
         };
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct StatWorkstation0
+        {
+            [MarshalAs(UnmanagedType.I8)] public Int64 StatisticsStartTime;
+            public long BytesReceived;
+            public long SmbsReceived;
+            public long PagingReadBytesRequested;
+            public long NonPagingReadBytesRequested;
+            public long CacheReadBytesRequested;
+            public long NetworkReadBytesRequested;
+            public long BytesTransmitted;
+            public long SmbsTransmitted;
+            public long PagingWriteBytesRequested;
+            public long NonPagingWriteBytesRequested;
+            public long CacheWriteBytesRequested;
+            public long NetworkWriteBytesRequested;
+            public int InitiallyFailedOperations;
+            public int FailedCompletionOperations;
+            public int ReadOperations;
+            public int RandomReadOperations;
+            public int ReadSmbs;
+            public int LargeReadSmbs;
+            public int SmallReadSmbs;
+            public int WriteOperations;
+            public int RandomWriteOperations;
+            public int WriteSmbs;
+            public int LargeWriteSmbs;
+            public int SmallWriteSmbs;
+            public int RawReadsDenied;
+            public int RawWritesDenied;
+            public int NetworkErrors;
+            public int Sessions;
+            public int FailedSessions;
+            public int Reconnects;
+            public int CoreConnects;
+            public int Lanman20Connects;
+            public int Lanman21Connects;
+            public int LanmanNtConnects;
+            public int ServerDisconnects;
+            public int HungSessions;
+            public int UseCount;
+            public int FailedUseCount;
+            public int CurrentCommands;
+        }
     }
 }

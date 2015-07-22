@@ -20,9 +20,6 @@ namespace Fesslersoft.WindowsAPI.Internal.Native.ShellFunctions.ContextMenu
         [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
         internal static extern int GetMenuDefaultItem(IntPtr hMenu, bool fByPos, uint gmdiFlags);
 
-        [DllImport("shell32.dll")]
-        internal static extern Int32 SHGetDesktopFolder(out IntPtr ppshf);
-
         [DllImport("shlwapi.dll", EntryPoint = "StrRetToBuf", ExactSpelling = false, CharSet = CharSet.Auto, SetLastError = true)]
         internal static extern Int32 StrRetToBuf(IntPtr pstr, IntPtr pidl, StringBuilder pszBuf, int cchBuf);
 

@@ -13,13 +13,16 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -39,22 +42,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DataTypes\Statworkstation0.cs" />
+    <Compile Include="Common\DataTypes\ShareInfo503.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareDel\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetStatisticsGet\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareSetInfo\DllImports.cs" />
+    <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareGetInfo\DllImports.cs" />
+    <Compile Include="Managed\Networking\ManagementFunctions\ApiBuffer.cs" />
+    <Compile Include="Managed\Networking\ShareManagementFunctions\Sessions.cs" />
+    <Compile Include="Managed\Networking\ShareManagementFunctions\Shares.cs" />
+    <Compile Include="Managed\Networking\ShareManagementFunctions\Statistics.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetConnectionEnum\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetFileGetInfo\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionGetInfo\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareAdd\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareCheck\DllImports.cs" />
-    <Compile Include="Managed\DataTypes\ConnectionInfo1.cs" />
-    <Compile Include="Managed\DataTypes\SessionInfo2.cs" />
-    <Compile Include="Managed\DataTypes\ShareInfo502.cs" />
-    <Compile Include="Managed\Helpers\Enum.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetConnectionEnum.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetFileGetInfo.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetSessionGetInfo.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetShareAdd.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetShareCheck.cs" />
-    <Compile Include="Managed\ShellFunctions\ContextMenu.cs" />
-    <Compile Include="Managed\ShellFunctions\ExplorerIcons.cs" />
+    <Compile Include="Internal\Native\ShellFunctions\SHFileOperation\DllImports.cs" />
+    <Compile Include="Internal\Native\ShellFunctions\SHGetDesktopFolder\DllImports.cs" />
+    <Compile Include="Managed\Networking\ShareManagementFunctions\Files.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetShareDel.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetStatisticsGet.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetShareSetInfo.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetShareGetInfo.cs" />
+    <Compile Include="Managed\Raw\ShellFunctions\ShFileOperation.cs" />
+    <Compile Include="Managed\Raw\ShellFunctions\SHGetDesktopFolder.cs" />
+    <Compile Include="Common\DataTypes\ConnectionInfo1.cs" />
+    <Compile Include="Common\DataTypes\SessionInfo2.cs" />
+    <Compile Include="Common\DataTypes\ShareInfo502.cs" />
+    <Compile Include="Common\DataTypes\ShFileOperation.cs" />
+    <Compile Include="Common\Enum.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetConnectionEnum.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetFileGetInfo.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetSessionGetInfo.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetShareAdd.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetShareCheck.cs" />
+    <Compile Include="Managed\Raw\ShellFunctions\ContextMenu.cs" />
+    <Compile Include="Managed\Raw\ShellFunctions\SHGetFileInfo.cs" />
     <Compile Include="Internal\Native\DataTypes\Enums.cs" />
     <Compile Include="Internal\Native\DataTypes\Structs.cs" />
     <Compile Include="Internal\Native\Interfaces\IContextMenu.cs" />
@@ -66,18 +89,19 @@
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionDel\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetSessionEnum\DllImports.cs" />
     <Compile Include="Internal\Native\NetworkShareManagementFunctions\NetShareEnum\DllImports.cs" />
-    <Compile Include="Managed\DataTypes\FileInfo3.cs" />
-    <Compile Include="Managed\NetworkManagementFunctions\NetApiBufferFree.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetFileClose.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetFileEnum.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetSessionDel.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetSessionEnum.cs" />
-    <Compile Include="Managed\NetworkShareManagementFunctions\NetShareEnum.cs" />
-    <Compile Include="Managed\DataTypes\SessionInfo502.cs" />
-    <Compile Include="Managed\DataTypes\ShareInfo2.cs" />
+    <Compile Include="Common\DataTypes\FileInfo3.cs" />
+    <Compile Include="Managed\Raw\NetworkManagementFunctions\NetApiBufferFree.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetFileClose.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetFileEnum.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetSessionDel.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetSessionEnum.cs" />
+    <Compile Include="Managed\Raw\NetworkShareManagementFunctions\NetShareEnum.cs" />
+    <Compile Include="Common\DataTypes\SessionInfo502.cs" />
+    <Compile Include="Common\DataTypes\ShareInfo2.cs" />
     <Compile Include="Internal\Native\ShellFunctions\ContextMenu\DllImports.cs" />
     <Compile Include="Internal\Native\Helper\ShellContextMenuException.cs" />
     <Compile Include="Internal\Native\ShellFunctions\SHGetFileInfo\DllImports.cs" />
+    <Compile Include="Common\Interfaces\IShellFolder.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

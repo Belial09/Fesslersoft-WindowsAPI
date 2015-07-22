@@ -4,6 +4,9 @@
     {
         private static void Main(string[] args)
         {
+            //var del = Fesslersoft.WindowsAPI.Managed.API.ShellFunctions.ShFileOperation.MoveToRecycleBin(@"C:\Users\MF\Desktop\WinSCP - Kopie.lnk", Enum.FileOperationFlags.FOF_NOERRORUI);
+
+
             //var myShareInfo502 = new ShareInfo502();
 
             //string shareName = "DCMLog";
@@ -21,17 +24,17 @@
             //myShareInfo502.Reserved= 0;
             //myShareInfo502.SecurityDescriptor = IntPtr.Zero;
 
-            //var result = Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions.NetShareAdd.CreateNetworkShare("localhost", myShareInfo502);
+            //var result = Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions.NetShareAdd.Create("localhost", myShareInfo502);
 
             //while (true)
             //{
             //    Application.DoEvents();
 
-            //    var shares = Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions.NetShareEnum.GetNetShares("localhost");
+            //    var shares = Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions.NetShareEnum.GetShares("localhost");
 
             //    foreach (var shareInfo2 in shares)
             //    {
-            //        var connections = Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions.NetConnectionEnum.GetNetConnections("localhost", shareInfo2.NetName);
+            //        var connections = Fesslersoft.WindowsAPI.Managed.NetworkShareManagementFunctions.NetConnectionEnum.GetConnections("localhost", shareInfo2.NetName);
             //        foreach (var connectionInfo1 in connections)
             //        {
             //            Console.WriteLine("{0};{1};{2};{3};{4};{5};{6};", connectionInfo1.ConnectionId, connectionInfo1.NetName, connectionInfo1.NumberOfOpens, connectionInfo1.NumberOfUsers, connectionInfo1.ConnectionTime, Enum.GetName(typeof(Managed.Helpers.Enum.ShareType),connectionInfo1.ConnectionType), connectionInfo1.UserName);

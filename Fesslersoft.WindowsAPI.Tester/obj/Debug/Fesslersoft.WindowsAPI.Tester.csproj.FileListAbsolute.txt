@@ -1,7 +1,6 @@
 D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.Tester\bin\Debug\Fesslersoft.WindowsAPI.Tester.exe
 D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.Tester\bin\Debug\Fesslersoft.WindowsAPI.Tester.pdb
 D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.Tester\bin\Debug\Fesslersoft.WindowsAPI.dll
-D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.Tester\bin\Debug\Fesslersoft.WindowsAPI.pdb
 D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.Tester\obj\Debug\Fesslersoft.WindowsAPI.Tester.csprojResolveAssemblyReference.cache
 D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.Tester\obj\Debug\Fesslersoft.WindowsAPI.Tester.exe
 D:\.NET Projekte\Fesslersoft.WindowsAPI\Fesslersoft.WindowsAPI.Tester\obj\Debug\Fesslersoft.WindowsAPI.Tester.pdb
